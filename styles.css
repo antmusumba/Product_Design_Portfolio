@@ -784,7 +784,6 @@ section + section {
     gap: 2rem;
 }
 
-
 .project-card {
     background: white;
     border-radius: 20px;
@@ -797,14 +796,12 @@ section + section {
     animation: fadeIn 1s ease forwards;
 }
 
-
 .project-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
 }
 
 .project-image {
-
     height: 200px;
     background: linear-gradient(to right, #1A7D97, #2D4A6B);
     position: relative;
@@ -815,6 +812,12 @@ section + section {
     align-items: center;
     color: white;
     font-size: 4rem;
+}
+
+/* Reduce project card icon size */
+.project-icon {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
 }
 
 .project-icon {
@@ -867,6 +870,18 @@ section + section {
     transform: scale(1.1);
 }
 
+/* Reduce size of project links icons on hover overlay */
+.project-links .project-link i {
+    font-size: 1.2rem;
+}
+
+/* Responsive adjustment for smaller screens */
+@media (max-width: 768px) {
+    .project-links .project-link i {
+        font-size: 1rem;
+    }
+}
+
 .project-content {
     padding: 1.5rem;
 }
@@ -912,7 +927,6 @@ section + section {
     flex-wrap: wrap;
     gap: 0.4rem;
 }
-
 
 .tag {
     background: #FBF1E8;
@@ -1205,6 +1219,10 @@ section + section {
     }
     .container {
         padding: 0 12px;
+    }
+
+    .project-icon {
+        font-size: 1.5rem;
     }
 }
 

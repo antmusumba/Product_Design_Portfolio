@@ -506,6 +506,8 @@ section + section {
     z-index: 2;
 }
 
+ 
+
 .about-text h3 {
     font-size: 1.8rem;
     font-weight: 700;
@@ -782,25 +784,46 @@ section + section {
     gap: 2rem;
 }
 
+
 .project-card {
     background: white;
-    border-radius: 15px;
+    border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
     transition: all 0.3s ease;
+
     border: 1px solid rgba(26, 125, 151, 0.1);
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
 }
+
 
 .project-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
 }
 
 .project-image {
+
     height: 200px;
-    background: #1A7D97;
+    background: linear-gradient(to right, #1A7D97, #2D4A6B);
     position: relative;
     overflow: hidden;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 4rem;
+}
+
+.project-icon {
+    opacity: 0.8;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-icon {
+    transform: scale(1.1);
 }
 
 .project-overlay {
@@ -849,13 +872,21 @@ section + section {
 }
 
 /* Consistent Heading Styles */
+
 .project-content h3 {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     font-weight: 700;
     color: #2D4A6B;
-    margin-bottom: 0.8rem;
+    margin-bottom: 1rem;
     position: relative;
     letter-spacing: -0.01em;
+}
+
+.project-content p {
+    font-size: 1rem;
+    color: #6c757d;
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
 }
 
 .project-content h3::after {
@@ -882,6 +913,7 @@ section + section {
     gap: 0.4rem;
 }
 
+
 .tag {
     background: #FBF1E8;
     color: #1A7D97;
@@ -889,6 +921,57 @@ section + section {
     border-radius: 15px;
     font-size: 0.8rem;
     font-weight: 500;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.tag:hover {
+    background: #1A7D97;
+    color: white;
+}
+
+.tag.mobile-design {
+    background: #e0f7fa;
+    color: #00bcd4;
+}
+
+.tag.ux-research {
+    background: #ede7f6;
+    color: #673ab7;
+}
+
+.tag.prototyping {
+    background: #fff3e0;
+    color: #ff9800;
+}
+
+.tag.dashboard-design {
+    background: #e8f5e9;
+    color: #388e3c;
+}
+
+.tag.data-visualization {
+    background: #f3e5f5;
+    color: #8e24aa;
+}
+
+.tag.healthcare-ux {
+    background: #e1f5fe;
+    color: #0277bd;
+}
+
+.tag.fintech {
+    background: #fbe9e7;
+    color: #d84315;
+}
+
+.tag.security-ux {
+    background: #f0f4c3;
+    color: #afb42b;
+}
+
+.tag.mobile-banking {
+    background: #f3e5f5;
+    color: #8e24aa;
 }
 
 /* Reduced Contact Section */

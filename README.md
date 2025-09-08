@@ -2,13 +2,13 @@
 
 A stunning, modern UX portfolio website built with HTML5, CSS3, and JavaScript. Features a clean, minimalist design with smooth animations and responsive layout.
 
-## 🎨 Color Scheme
+## Color Scheme
 
 - **Primary Color**: #147994 (Teal)
 - **Secondary Color**: #f5f5dc (Beige)
 - **Accent Color**: #ff8c00 (Dark Orange)
 
-## ✨ Features
+## Features
 
 - **Responsive Design**: Works perfectly on all devices
 - **Modern Animations**: Smooth transitions and hover effects
@@ -19,7 +19,7 @@ A stunning, modern UX portfolio website built with HTML5, CSS3, and JavaScript. 
 - **Loading Animations**: Beautiful page load effects
 - **Parallax Effects**: Subtle parallax scrolling in hero section
 
-## 📱 Sections
+## Sections
 
 1. **Hero Section**: Eye-catching introduction with animated elements
 2. **About Section**: Personal information and statistics
@@ -28,13 +28,13 @@ A stunning, modern UX portfolio website built with HTML5, CSS3, and JavaScript. 
 5. **Contact Section**: Contact form and social links
 6. **Footer**: Simple footer with copyright information
 
-## 🚀 Getting Started
+## Getting Started
 
 1. Clone or download the repository
 2. Open `index.html` in your web browser
 3. Customize the content to match your personal information
 
-## 🛠️ Customization
+## Customization
 
 ### Personal Information
 - Update the hero section text in `index.html`
@@ -52,7 +52,7 @@ A stunning, modern UX portfolio website built with HTML5, CSS3, and JavaScript. 
 - Add new interactive features
 - Modify animations and effects
 
-## 📁 File Structure
+## File Structure
 
 ```
 ux-portfolio/
@@ -62,7 +62,7 @@ ux-portfolio/
 └── README.md           # Documentation
 ```
 
-## 🌐 Browser Support
+## Browser Support
 
 - Chrome (recommended)
 - Firefox
@@ -70,14 +70,14 @@ ux-portfolio/
 - Edge
 - Mobile browsers
 
-## 📝 License
+## License
 
 This project is open source and available under the [MIT License](LICENSE).
 
-## 🤝 Contributing
+## Contributing
 
 Feel free to fork this project and submit pull requests for any improvements.
 
 ---
 
-**Designed with ❤️ for exceptional user experiences**
+**Designed with love for exceptional user experiences**

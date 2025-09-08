@@ -269,6 +269,7 @@ body {
     justify-content: center;
     align-items: center;
     position: relative;
+    cursor: pointer;
 }
 
 .image-container {
@@ -284,6 +285,14 @@ body {
     transform: scale(0.8);
     animation: scaleIn 1s ease 1s forwards;
     box-shadow: 0 20px 50px rgba(26, 125, 151, 0.2);
+    transition: transform 0.4s cubic-bezier(0.4, 0.2, 0.2, 1), box-shadow 0.4s;
+}
+
+/* Enlarge hero image on hover */
+.hero-image:hover .image-container {
+    transform: scale(1.08);
+    box-shadow: 0 12px 40px rgba(0, 26, 48, 0.15);
+    z-index: 2;
 }
 
 .floating-elements {
@@ -780,212 +789,111 @@ section + section {
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
 }
 
 .project-card {
-    background: white;
-    border-radius: 20px;
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 4px 16px rgba(0,26,48,0.10);
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-    transition: all 0.3s ease;
-
-    border: 1px solid rgba(26, 125, 151, 0.1);
-    opacity: 0;
-    animation: fadeIn 1s ease forwards;
+    transition: box-shadow 0.3s;
+    max-width: 320px;
+    margin: 0 auto;
 }
 
-.project-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-}
-
-.project-image {
-    height: 200px;
-    background: linear-gradient(to right, #1A7D97, #2D4A6B);
+.project-image-container {
     position: relative;
     overflow: hidden;
-    border-radius: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-size: 4rem;
+    height: 140px;
 }
 
-/* Reduce project card icon size */
-.project-icon {
-    font-size: 2.2rem;
-    margin-bottom: 10px;
+.project-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+    border-radius: 0;
 }
 
-.project-icon {
-    opacity: 0.8;
-    transition: transform 0.3s ease;
-}
-
-.project-card:hover .project-icon {
-    transform: scale(1.1);
+.project-card:hover .project-img {
+    transform: scale(1.07);
 }
 
 .project-overlay {
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.7);
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    opacity: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
+    gap: 16px;
+    transition: opacity 0.3s;
 }
 
 .project-card:hover .project-overlay {
     opacity: 1;
 }
 
-.project-links {
-    display: flex;
-    gap: 1rem;
-}
-
-.project-link {
-    width: 40px;
-    height: 40px;
-    background: #1A7D97;
-    color: white;
-    border-radius: 50%;
+.project-btn {
+    background: #fff;
+    color: #1A7D97;
+    border-radius: 999px;
+    padding: 8px 18px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-decoration: none;
     display: flex;
     align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    transition: all 0.3s ease;
+    gap: 6px;
+    box-shadow: 0 2px 8px rgba(0, 26, 48, 0.08);
+    transition: background 0.2s, color 0.2s;
 }
 
-.project-link:hover {
-    background: #BF7807;
-    transform: scale(1.1);
-}
-
-/* Reduce size of project links icons on hover overlay */
-.project-links .project-link i {
-    font-size: 1.2rem;
-}
-
-/* Responsive adjustment for smaller screens */
-@media (max-width: 768px) {
-    .project-links .project-link i {
-        font-size: 1rem;
-    }
+.project-btn:hover {
+    background: #1A7D97;
+    color: #fff;
 }
 
 .project-content {
-    padding: 1.5rem;
+    padding: 16px;
 }
 
-/* Consistent Heading Styles */
-
-.project-content h3 {
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: #2D4A6B;
-    margin-bottom: 1rem;
-    position: relative;
-    letter-spacing: -0.01em;
-}
-
-.project-content p {
-    font-size: 1rem;
-    color: #6c757d;
-    margin-bottom: 1.5rem;
-    line-height: 1.7;
-}
-
-.project-content h3::after {
-    content: '';
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    width: 25px;
-    height: 2px;
-    background: linear-gradient(135deg, #1A7D97 0%, #BF7807 100%);
-    border-radius: 2px;
-}
-
-.project-content p {
-    color: #2D4A6B;
-    margin-bottom: 1.2rem;
-    line-height: 1.6;
+.project-meta {
+    display: flex;
+    justify-content: space-between;
     font-size: 0.95rem;
+    color: #888;
+    margin-bottom: 8px;
+}
+
+.project-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.project-desc {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 14px;
 }
 
 .project-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.4rem;
+    gap: 8px;
 }
 
 .tag {
-    background: #FBF1E8;
+    background: #F3F7FA;
     color: #1A7D97;
-    padding: 0.4rem 0.8rem;
-    border-radius: 15px;
+    border-radius: 999px;
+    padding: 3px 10px;
     font-size: 0.8rem;
     font-weight: 500;
-    transition: background 0.3s ease, color 0.3s ease;
-}
-
-.tag:hover {
-    background: #1A7D97;
-    color: white;
-}
-
-.tag.mobile-design {
-    background: #e0f7fa;
-    color: #00bcd4;
-}
-
-.tag.ux-research {
-    background: #ede7f6;
-    color: #673ab7;
-}
-
-.tag.prototyping {
-    background: #fff3e0;
-    color: #ff9800;
-}
-
-.tag.dashboard-design {
-    background: #e8f5e9;
-    color: #388e3c;
-}
-
-.tag.data-visualization {
-    background: #f3e5f5;
-    color: #8e24aa;
-}
-
-.tag.healthcare-ux {
-    background: #e1f5fe;
-    color: #0277bd;
-}
-
-.tag.fintech {
-    background: #fbe9e7;
-    color: #d84315;
-}
-
-.tag.security-ux {
-    background: #f0f4c3;
-    color: #afb42b;
-}
-
-.tag.mobile-banking {
-    background: #f3e5f5;
-    color: #8e24aa;
 }
 
 /* Reduced Contact Section */
